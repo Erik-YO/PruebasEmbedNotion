@@ -1,0 +1,41 @@
+
+
+body {
+    background-color: #333;
+    overflow-y: scroll;
+    width: 85%;
+    font-family:
+        "Favorit",
+        "Helvetica Neue",
+        "HelveticaNeue",
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+
+.npf_quirky{
+    font-family:"Fairwater","Georgia","Times","Times New Roman","serif";
+}
+
+.npf_chat{
+    font-family:"Courier","monospace";
+}
+
+div img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.tagspan {
+    /*1º top-left corner, 2º top-right corner, 3º bottom-right corner, 4º bottom-left corner*/
+    border-radius: 10%;
+    padding: 4px;
+}
+
+.tagviolet {background-color: #ee82ee;}
+.taggreen {background-color: #90ee90;}
+.tagsalmon {background-color: #ffa07a;}
+.tagblue {background-color: #87cefa;}
+.taggray {background-color: gray;}
+/* .tag {background-color: ;} */
+
