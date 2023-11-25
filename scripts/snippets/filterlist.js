@@ -1,4 +1,59 @@
 
+function resetDisplayBlocks() {
+
+    let listas = document.getElementsByClassName('filter-list');
+
+    for (let lista of listas){
+        let elementos = lista.getElementsByClassName('filter-block');
+        for (let div of elementos){
+            div.style.display = "";
+        }
+    }
+}
+
+function setTagFilter(tag){
+
+    let listas = document.getElementsByClassName('filter-list');
+
+    for (let lista of listas){
+        let filtroTag = lista.getElementsByClassName('filter-tag');
+        if(filtroTag && filtroTag.length){
+            filtroTag[0].value = '';
+        }
+    }
+    resetDisplayBlocks();
+    for (let lista of listas){
+        let filtroTag = lista.getElementsByClassName('filter-tag');
+        if(filtroTag && filtroTag.length){
+            filtroTag[0].value = tag;
+        }
+    }
+    filterlists();
+}
+
+function reverseList(){
+
+    let listas = document.getElementsByClassName('filter-list');
+
+    for (let lista of listas){
+
+
+        let elementos = [...lista.getElementsByClassName('filter-block')];
+        console.log(elementos);
+
+        nodos = [];
+        for(e of elementos){
+            nodos.push(e);
+            lista.removeChild(e);
+        }
+
+        lista.append(...nodos.reverse());
+    }
+
+}
+
+
+
 
 function filterlists() {
 
@@ -16,8 +71,7 @@ function filterlists() {
         filtro = filtro.length ? filtro[0].value.toLowerCase() : '';
         filtroTag = filtroTag.length ? filtroTag[0].value.toLowerCase() : '';
 
-        for (let i = 0; i < elementos.length; i++){
-            let div = elementos[i];
+        for (let div of elementos){
 
             let tags = []
             try { tags = Array.from(div.getElementsByClassName('tags')[0].children).map(o => o.innerText);

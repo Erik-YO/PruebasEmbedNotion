@@ -48,7 +48,9 @@ function fromPostListToInterface(posts) {
             '</div>');
         let tagObj = toDOM(
             '<div class="tags">' +
-            tags.map(t => `<span class="tagspan ${colorFromTag(t)}"><b>${t}</b></span>`)
+            tags.map(t => `
+            <span style="cursor: pointer;" class="tagspan ${colorFromTag(t)}" onclick="setTagFilter('${t}')">
+            <b>${t}</b></span>`)
                 .join(' ') +
             '</div>'
         );
@@ -88,7 +90,7 @@ async function fetchData() {
     let posts = [];
     let done = false;
 
-    let limit = 2; // [1-20]
+    let limit = 20; // [1-20]
     let offset = 0;
 
     while(!done){

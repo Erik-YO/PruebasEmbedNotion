@@ -1,4 +1,8 @@
 
+.filter-list{
+    width: fit-content;
+}
+
 div.filter-list > div.filter-list-filters {
     background-image: url('/css/searchicon.png');
     /* Add a search icon to input */
@@ -30,7 +34,7 @@ div.filter-list > div > input[type=text] {
     /* Do not repeat the icon image */
     
     background-color: #ddd;
-    width: 45%;
+    width: fit-content;
     /* Full-width */
     font-size: 16px;
     /* Increase font-size */
