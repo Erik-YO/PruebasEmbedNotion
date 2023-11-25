@@ -1,6 +1,9 @@
 
 .filter-list{
     width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 div.filter-list > div.filter-list-filters {
